@@ -15,5 +15,5 @@ For example:
 
 After providing all the context run this command `py main.py get_model_spec 'dwh-model-name'` to generate a YAML-file. 
 
-**Important Note**
+**Important note!** <br>
 The generated specifications are meant as a basis for further refinment. Always double-check wheter the output of dwh-doc-helper is correct, because an incorrect documentation is more detrimental than having no documentation at all. The same is true for the tests.
