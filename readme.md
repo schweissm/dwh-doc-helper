@@ -5,7 +5,7 @@
 4. Create a **context** and **output** folder inside the root folder of the repo.
 
 # Usage
-The dwh-doc-helper creates dbt-model specifications in the form of YAML-files. The goal is here to facilitate the documentation and testing of the models. The basis for the documentation and tests are the context around the model which we provide to a LLM (Gemini) for reasoning. The context is provided in the form of text files that are put into the context folder. Each piece of context should be put inside it's own text file with a descriptive heading, because the heading is also used in the prompt for the LLM.
+The dwh-doc-helper creates dbt-model specifications in the form of YAML-files. The goal is here to facilitate the documentation and testing of the models. The basis for the documentation and tests are the context around the model which we provide to a LLM (Gemini) for reasoning. The context is provided in the form of text files that are put into the context folder. Each piece of context should be put inside it's own text file with a descriptive filename, because the filename is also used in the prompt for the LLM.
 
 For example:
 - model_code.txt - Containes the dbt-model code
