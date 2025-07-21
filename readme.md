@@ -1,6 +1,6 @@
 # Set-Up
 1. Clone the repository and create a .env file inside the dwh-doc-helper folder.
-2. Inside the env file create a GEMINI_API_KEY variable and assign an API-Key.
+2. Inside the .env file create a GEMINI_API_KEY variable and assign an API-Key.
 3. Run `pipenv install` and then `pipenv shell`.
 4. Create a **context** and **output** inside the root folder of the repo.
 
@@ -13,7 +13,7 @@ For example:
 - model_schema.txt - Schema of the result table
 - model_path.txt - Full path of the model inside the dwh-repository
 
-After providing all the context run this command `py main.py get_model_spec 'dwh-model-name'` to generate a YAML-file. 
+After providing all the context run `py main.py get_model_spec 'dwh-model-name'` to generate a YAML-file. 
 
 **Important note!** <br>
-The generated specifications are meant as a basis for further refinment. Always double-check wheter the output of dwh-doc-helper is correct, because an incorrect documentation is more detrimental than having no documentation at all. The same is true for the tests.
+The generated specifications are meant as a basis for further refinment. Always double-check wheter the output of the dwh-doc-helper tool is correct, because an incorrect documentation is more detrimental than having no documentation at all. The same is true for the tests.
