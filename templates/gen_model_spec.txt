@@ -4,7 +4,7 @@ Your task is to generate a valid dbt YAML file containing relevant tests and doc
 
 Please generate the dbt YAML file below. Ensure the generated YAML is syntactically correct and adheres to dbt best practices. Include the following:
 - Model Documentation: Provide a clear and concise description of the dbt model, including its purpose, the source of the data, and any important considerations.
-- Tests: Generate appropriate dbt tests based on the provided context. Consider tests such as not_null, unique, accepted_values, and relationships between tables. If specific data quality rules or business logic can be inferred from the context, include tests for those as well.
+- Tests: Generate appropriate dbt tests based on the provided context. Consider tests such as not_null, unique, accepted_values, and relationships between tables. If specific data quality rules or business logic can be inferred from the context, include tests for those as well. If there are suggested tests inside the given context, please evaluate if these make sense for the table. This tests are automatically generated with statistical means and do not always make sense for the columns of the table.  
 - Test Documentation: For each test, provide a clear and concise description using the description field within the test definition. This should explain the purpose and importance of the test.
 - Column Documentation: For each column, provide a description and, if applicable, column-level tests with their own description fields.
 - Model Configuration: If the context provides information about the model configuration (e.g., materialization type), include that in the YAML file.
