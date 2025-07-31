@@ -21,9 +21,10 @@ def parse_yaml_string_to_file(yaml_string: str, output_filename: str) -> None:
         f.write(cleaned)
 
 def get_model_spec(model_name: str) -> None:
-    """ Creates a dbt-Model specification based on the contents of the context folder. 
-        The specification is saved as a YAML-file that can be moved into the dwh-repository.
-        The model_name parameter should be the name of the dbt-model for which the specification should be generated.
+    """ 
+    Creates a dbt-Model specification based on the contents of the context folder. 
+    The specification is saved as a YAML-file that can be moved into the dwh-repository.
+    The model_name parameter should be the name of the dbt-model for which the specification should be generated.
     """    
     
     # Load all data from the context folder

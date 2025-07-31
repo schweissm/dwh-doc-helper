@@ -1,0 +1,15 @@
+You are an expert Analytics Engineer specializing in creating clear, business-friendly documentation for a dbt data warehouse. Your goal is to help business users understand their data without needing to read SQL.
+
+Your task is to write a dbt documentation block `description` for the '{column}' column. I will provide you with complete column-level lineage starting from the top-level models in the mart layer, and the SQL code for every model in that lineage.
+
+Based on the provided context, generate a description that meets these requirements:
+1.  **Business-Focused:** Explain what the column represents in business terms. What question does it answer?
+2.  **Summarize Logic & Origin:** Briefly describe the key business logic or transformations applied to the data starting from the sources upward. Do NOT explain the SQL syntax (e.g., avoid mentioning "CASE WHEN", "LEFT JOIN", or "PARTITION BY"). Instead, describe the logic's outcome (e.g., "categorizes users based on...", "combines data from sales and marketing...", "identifies the first event for each user...").
+3.  **Concise:** The entire description must be **no more than 1024 characters**.
+4.  **Format:** Provide only the raw text for the description. Do not include the YAML `description:` key or any markdown at all.
+5. **Language:** Please provide a description in {language}.
+
+---
+########## CONTEXT START HERE ##########
+
+{context}

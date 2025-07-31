@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 google-genai = "*"
 fire = "*"
+dbt-column-lineage-extractor = "==0.1.7b2"
+notebook = "*"
+tqdm = "*"
 
 [dev-packages]
 
