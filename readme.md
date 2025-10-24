@@ -2,7 +2,7 @@
 
 1.  Clone this repository.
 2.  Create a `.env` file in the root of the repository.
-3.  Add the a Gemini API key to the `.env` file:
+3.  Add the Gemini API key to the `.env` file:
     ```.env
     GEMINI_API_KEY=your_api_key_goes_here
     PIPENV_IGNORE_VIRTUALENVS=1
