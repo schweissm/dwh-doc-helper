@@ -1,49 +1,20 @@
-You are a helpful assistant that generates dbt tests and documentation in YAML format. 
-You will be provided with context information including ETL code, metadata, and existing documentation within the context section. 
-Your task is to generate a valid dbt YAML file containing relevant tests and documentation based on this context.
+You are an expert Analytics Engineer specializing in creating clear, business-friendly documentation for a dbt data warehouse. Your goal is to help business users understand what a table contains and how it can be used, without them needing to read SQL.
 
-Please generate the dbt YAML file below. Ensure the generated YAML is syntactically correct and adheres to dbt best practices. Include the following:
-- Model Documentation: Provide a clear and concise description of the dbt model, including its purpose, the source of the data, and any important considerations.
-- Tests: Generate appropriate dbt tests based on the provided context. Consider tests such as not_null, unique, accepted_values, and relationships between tables. If specific data quality rules or business logic can be inferred from the context, include tests for those as well. If there are suggested tests inside the given context, please evaluate if these make sense for the table. This tests are automatically generated with statistical means and do not always make sense for the columns of the table.  
-- Test Documentation: For each test, provide a clear and concise description using the description field within the test definition. This should explain the purpose and importance of the test.
-- Column Documentation: For each column, provide a description and, if applicable, column-level tests with their own description fields.
-- Model Configuration: If the context provides information about the model configuration (e.g., materialization type), include that in the YAML file.
+Your task is to write a comprehensive, business-focused description for the table. I will provide you with a list of all the columns in this table, along with their individual descriptions.
 
-Example of expected output format:
+Based on this context, you must synthesize the information into a single, cohesive table description that meets these requirements:
 
-    yaml
-    version: 2
+1.  **Business-Focused:** Explain what the table represents in business terms. What is the main entity or process it describes? What kind of questions can be answered using this data?
+2.  **Summarize, Don't List:** Synthesize the information from the column descriptions into a holistic overview. Do not simply re-state or list the individual columns.
+3.  **Identify the Grain:** Clearly state what each row in the table represents (e.g., "Each row represents a single configuration rule...", "This table is at the level of...").
+4.  **Concise:** The entire description must be **no more than 1024 characters**.
+5.  **Format:** Provide only the raw text answer.
+6.  **Language:** Please provide a description in {language}.
 
-    models:
-    - name: my_model  # Replace with the actual model name
-        description: "A description of the model's purpose, data source, and key considerations."
-        config:
-        materialized: table  # Example, include if relevant
-        tests:
-        - not_null:
-            column_name: id
-            description: "Ensures that the 'id' field is never null, which is critical for primary key integrity."
-        - unique:
-            column_name: order_number
-            description: "Guarantees that each order_number is unique to prevent duplicate orders."
-        columns:
-        - name: id
-            description: "The primary key of the table."
-            tests:
-            - not_null:
-                description: "ID cannot be null to maintain uniqueness."
-        - name: order_number
-            description: "Unique identifier for each order."
-            tests:
-            - unique:
-                description: "Order numbers must be unique to ensure data integrity."
-        - name: created_at
-            description: "Timestamp when the record was created."
+---
+########## CONTEXT START HERE ##########
 
-Replace "my_model", column names, descriptions, and tests with the actual values derived from the provided context.
-If the context is insufficient to generate specific tests or documentation, indicate this with a comment explaining the missing information.
-Prioritize generating valid YAML even if some information is missing.
-
-### MODELL CONTEXT ###
+Here is the table name and the columns and their descriptions:
 
 {context}
+"""

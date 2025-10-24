@@ -181,5 +181,5 @@ cython_debug/
 .cursorindexingignore
 
 # context and output folder
-output/
+outputs/
 context/
