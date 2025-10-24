@@ -180,7 +180,6 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
-# Work directories
-outputs/
+# context and output folder
+output/
 context/
-input/
